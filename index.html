@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>PIXEL PLAY | Jeux vidéo, consoles PS4 PS5 et high-tech à Douala</title>
+  <meta name="description" content="PIXEL PLAY à Bonamoussadi, Douala : jeux vidéo, consoles PS4 et PS5, achat et vente d'appareils électroniques. Commande sur WhatsApp." />
+  <link rel="icon" href="/img/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,700;1,800&family=Inter:wght@400;500;700&display=swap" />
+</head>
+<body>
+<div id="root"><p id="boot" style="font:16px system-ui,sans-serif;padding:24px">Chargement de PIXEL PLAY…</p></div>
+<script>
+/* Garde de démarrage : si l'application ne se lance pas, afficher la cause au lieu d'une page blanche. */
+(function () {
+  function show(msg) {
+    var r = document.getElementById('root');
+    if (!r || !document.getElementById('boot')) return;
+    r.innerHTML = '<div style="max-width:640px;margin:10vh auto;padding:24px;font:16px system-ui,sans-serif"><h1 style="font-size:1.4rem">Le site n\'a pas pu démarrer</h1><pre style="white-space:pre-wrap;background:#F5F4F8;padding:12px"></pre></div>';
+    r.querySelector('pre').textContent = msg;
+  }
+  if (location.protocol === 'file:') show("Cette page est ouverte par double-clic (file://). Elle doit être servie par un serveur : lancez « npm run dev » (développement) ou « npm run build » puis « npm run preview », ou déployez sur Vercel.");
+  window.addEventListener('error', function (e) {
+    if (e.target && e.target.tagName === 'SCRIPT') show("Un fichier du site n'a pas pu être chargé : " + (e.target.src || '') + "\nVérifiez le déploiement (dossier de sortie « dist », build réussi) puis rechargez.");
+    else show('Erreur au chargement : ' + (e.message || e.error));
+  }, true);
+  window.addEventListener('unhandledrejection', function (e) { show('Erreur au chargement : ' + (e.reason && e.reason.message || e.reason)); });
+  setTimeout(function () { show("L'application ne s'est pas lancée après 6 secondes. Ouvrez la console du navigateur (F12 → Console) pour voir l'erreur exacte."); }, 6000);
+})();
+</script>
+<script type="module" src="/src/main.jsx"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "pixelplay",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node --test",
+    "dev:api": "vercel dev"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^6.28.0",
+    "@supabase/supabase-js": "^2.46.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.11"
+  },
+  "engines": {
+    "node": ">=18.18"
+  }
+}
